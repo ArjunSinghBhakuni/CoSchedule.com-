@@ -1,0 +1,19 @@
+.checkbox-round {
+    content:'';
+    width: 2.5em;
+    height: 2.5em;
+    background-color: rgba(0, 128, 0, 0.753);
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: "none";
+     -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    
+}
+
+.checkbox-round:checked {
+    background-color: gray;
+    content:'x'
+}
