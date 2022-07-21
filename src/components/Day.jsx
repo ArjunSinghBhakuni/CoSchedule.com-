@@ -1,6 +1,8 @@
 import React from "react";
-import { Box, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Text ,Flex} from "@chakra-ui/react";
 import dayjs from "dayjs";
+import { AddIcon } from "@chakra-ui/icons";
+import "./day.css"
 const Day = ({ day, rowIdx }) => {
   function getCurrentDayClass() {
     return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY")
@@ -8,19 +10,28 @@ const Day = ({ day, rowIdx }) => {
       : "";
   }
 
+
+
   return (
-    <Box
+    <Box class="myDIV"
+    p="10px"
       border={"1px solid grey"}
       w="167"
       h="200px"
+      textAlign="start"
       bgColor={`${getCurrentDayClass()}`}
     >
-      <header>
+      <Text>
         {rowIdx === 0 && (
           <p className="text-sm mt-1">{day.format("dddd").toUpperCase()}</p>
         )}
-        <p>{day.format("MM-DD")}</p>
-      </header>
+      </Text>
+      <Flex justifyContent="space-between"  >
+
+        <Text>{day.format("MMM-DD")}</Text>
+        <AddIcon class="hide" />
+      </Flex> 
+        
     </Box>
   );
 };

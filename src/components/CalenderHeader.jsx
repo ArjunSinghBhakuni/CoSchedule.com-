@@ -1,4 +1,4 @@
-import { ChevronLeftIcon, ChevronRightIcon,Search2Icon,SunIcon } from '@chakra-ui/icons';
+import { ChevronLeftIcon, ChevronRightIcon,Search2Icon,SunIcon,AddIcon } from '@chakra-ui/icons';
 import { Box, Button, Flex, Heading,Center } from '@chakra-ui/react'
 import dayjs from 'dayjs';
 import React, { useContext, useState } from 'react'
@@ -23,7 +23,10 @@ const CalenderHeader = () => {
   return (
     <Box >
       
-      <Flex>
+      <Flex border={"1px solid red"} justifyContent="space-between">
+
+        <Box display={"flex"} marginLeft="40%"  justifyContent={"space-evenly"}  w="400px">
+
 
       
       <Button onClick={handlePrevMonth}>
@@ -47,13 +50,19 @@ const CalenderHeader = () => {
       >
         Today
       </Button>
+        </Box>
+        <Box display={"flex"}  justifyContent={"space-evenly"}  w="15rem">
+
+ 
 <Center>
 
       <Search2Icon  w={5} h={5} />
 </Center>
-<Button>Create</Button>
-<Button>{<SunIcon/>}Ideas </Button>
+ 
+<Button  >{<AddIcon marginRight={"0.3rem"}/>}{" "} Create</Button>
+<Button>{<SunIcon marginRight={"0.3rem"}/>}{" "} Ideas </Button>
      
+        </Box>
         </Flex>
     </Box>
   )
