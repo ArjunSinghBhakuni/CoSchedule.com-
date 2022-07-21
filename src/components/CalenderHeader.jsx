@@ -2,7 +2,9 @@ import { ChevronLeftIcon, ChevronRightIcon,Search2Icon,SunIcon,AddIcon } from '@
 import { Box, Button, Flex, Heading,Center } from '@chakra-ui/react'
 import dayjs from 'dayjs';
 import React, { useContext, useState } from 'react'
-import GlobalContext from './context/GlobalContext';
+import GlobalContext from '../context/GlobalContext';
+import {Link} from 'react-router-dom'
+import CreateButton from './CreateButton';
 
 const CalenderHeader = () => {
  const { monthIndex, setMonthIndex } = useContext(GlobalContext); //global context
@@ -58,8 +60,12 @@ const CalenderHeader = () => {
 
       <Search2Icon  w={5} h={5} />
 </Center>
+  
+  <Button  >
  
-<Button  >{<AddIcon marginRight={"0.3rem"}/>}{" "} Create</Button>
+      <CreateButton/>
+ 
+    </Button>
 <Button>{<SunIcon marginRight={"0.3rem"}/>}{" "} Ideas </Button>
      
         </Box>

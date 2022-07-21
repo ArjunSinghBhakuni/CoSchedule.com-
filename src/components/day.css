@@ -1,8 +1,9 @@
-.hide {
- display: none;
+ 
+.myDIV .hide{
+display: none;
 }
-   
-.myDIV:hover + .hide {
- display: block;
- color: red;
+.myDIV:hover .hide   {
+ display:block;
+ 
+ cursor: pointer;
 }

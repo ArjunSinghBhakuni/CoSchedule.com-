@@ -5,6 +5,7 @@ import { SimpleGrid,Container,Box} from '@chakra-ui/react'
 import CalenderHeader from './CalenderHeader'
 
 const Month = ({month}) => {
+ // console.log(month)
   return (
     <Box>
     <CalenderHeader/>
