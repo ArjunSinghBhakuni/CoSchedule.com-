@@ -1,17 +1,24 @@
-import { useState } from 'react'
 import './App.css'
-import Home from './Components/Home'
-import { Login } from './Components/Login'
-import { Register } from './Components/Registration'
-
+import {Link} from "react-router-dom"
+import { Login } from './Components/login/login'
+import {Register} from "./Components/register/register"
+import { Routes, Route } from "react-router-dom";
 function App() {
-
 
   return (
     <div className="App">
-      <Home />
-      <Register />
-      <Login />
+      <div>
+          <Link className="nav-login" to="/login">
+          Login
+          </Link>
+          <Link className="nav-signup" to="/register">
+          Signup
+          </Link>
+      </div>
+      <Routes>
+        <Route path="/login" element={<Login/>}></Route>
+        <Route path="/register" element={<Register/>}></Route>
+      </Routes>
     </div>
   )
 }
