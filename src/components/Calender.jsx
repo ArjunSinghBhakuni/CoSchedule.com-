@@ -15,7 +15,7 @@ const Calender = () => {
   }, [monthIndex]);
 
 
-  console.table(getMonth(2))
+  console.table(currentMonth)
   return (
     <div> 
       <Month month={currentMonth}/>

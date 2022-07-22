@@ -12,7 +12,7 @@ export default function ContextWrapper(props) {
 
  const [monthIndex, setMonthIndex] = useState(dayjs().month());
  
-
+console.log(monthIndex)
 return (
  <GlobalContext.Provider  value={{
   monthIndex,

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import {
   Box,
   Grid,
@@ -15,51 +15,65 @@ import "./day.css";
 import CreateButton from "./CreateButton";
 import CreateButtonMenuItem from "./CreateButtonMenuItem";
 import { DayContext } from "../context/DayContext";
+import { useSelector } from "react-redux";
+import DayProjects from "./DayProjects";
+
 const Day = ({ day, rowIdx }) => {
   function getCurrentDayClass() {
     return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY")
       ? "#e9f0f4"
       : "";
   }
- // console.log(day)
- //console.log(dayjs().format("DD-MMM-YYYY"))
+  // console.log(day)
 
- const {setDayschdule} = useContext(DayContext)
-// console.log(daysechdule)
+  const { setDayschdule } = useContext(DayContext);
+  // console.log(daysechdule)
+  const data = useSelector((state) => state.project);
+  //console.log(data)
 
+  const dayTask = data.filter((e) => e.date === day.format("DD-MMMM-YYYY"));
+ // console.log(dayTask);
   return (
-    <Box
+    <Box 
+ 
       className="myDIV"
       p="10px"
-      border={"1px solid grey"}
+      border={"1px solid lightgrey"}
       w="167"
       h="200px"
       textAlign="start"
       bgColor={`${getCurrentDayClass()}`}
     >
       {rowIdx === 0 && (
-        <Text className="text-sm mt-1">{day.format("dddd").toUpperCase()}</Text>
+        <Text  fontSize='lg' color={"grey"}  >{day.format("dddd").toUpperCase()}</Text>
       )}
 
-      <Flex justifyContent="space-between">
+      <Flex color={"grey"} justifyContent="space-between">
         <Text>{day.format("MMM-DD")}</Text>
 
         <Menu>
           {({ isOpen }) => (
             <>
-              <MenuButton isActive={isOpen} onClick={()=>{
-                 // console.log(day.format("MMM-DD"))
-                 setDayschdule(`${day.format("DD-MMMM-YYYY")}`)
-              
-                }}>
-                {<AddIcon   marginRight={"0.3rem"} className="hide" />}
+              <MenuButton
+                isActive={isOpen}
+                onClick={() => {
+                  // console.log(day.format("MMM-DD"))
+                  setDayschdule(`${day.format("DD-MMMM-YYYY")}`);
+                }}
+              >
+                {<AddIcon marginRight={"0.3rem"} className="hide" />}
               </MenuButton>
-              <CreateButtonMenuItem   />
+              <CreateButtonMenuItem />
             </>
           )}
         </Menu>
-        
       </Flex>
+      <Box>
+        {dayTask.map((e) => (
+           <DayProjects key={e.refNO} {...e} />
+        ))} 
+         
+      </Box>
     </Box>
   );
 };

@@ -1,20 +1,34 @@
-import * as types from './actiontypes'
+import * as types from "./actiontypes";
 
-const  initialState = {
- 
- project:[],
-}
+const initialState = {
+  project: [],
+  
+};
 
-export const reducer= (state = initialState, { type, payload }) => {
+export const reducer = (state = initialState, { type, payload }) => {
+  console.log(payload)
+  console.log(state.project)
   switch (type) {
-
-  case types.Get_Array_of_Days:
-    return { ...state, ...payload }
-
     case types.ADD_NEW_PROJECT:
-      return {...state,...payload}
+      let newprojectArr = [...state.project, payload];
+      return { ...state, project: newprojectArr };
 
-  default:
-    return state
+      case types.Delete_PROJECT:
+      let delelteArray =state.project.filter((e)=> e.refNO!=payload)
+      return { ...state, project: delelteArray };
+
+      case types.EDIT_PROJECT:
+        let editedArray =state.project.map((e)=>  {
+          if(e.refNO===payload[0]){
+            return {...e, title : payload[1]}
+          }
+          else {
+            return e
+          }
+        })
+        console.log(editedArray)
+        return { ...state, project: editedArray };
+    default:
+      return state;
   }
-}
+};

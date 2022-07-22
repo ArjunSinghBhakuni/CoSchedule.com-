@@ -1,18 +1,17 @@
 import axios from 'axios'
 import * as types from './actiontypes'
-
-const getArrayDays = (data)=>(dispatch)=>{
-
- dispatch({type:types.Get_Array_of_Days,payload:data})
+ 
+ 
+export const addNewProject=( params)=>(dispatch)=>{
+ 
+dispatch({type:types.ADD_NEW_PROJECT,payload:params})
 
 }
-export {getArrayDays}
 
+export const editProject = (refNO,text) =>(dispatch)=>{
+ dispatch({type:types.EDIT_PROJECT,payload:[refNO,text]})
+}
 
-export const addNewProject=(params)=>(dispatch)=>{
-//console.log(params)
- axios.post(" http://localhost:8080/projects",params).then((r)=>
- {
-  dispatch({type:types.ADD_NEW_PROJECT,payload:r.data})
- })
+export const deleteProject = (refNO) =>(dispatch)=>{
+ dispatch({type:types.Delete_PROJECT,payload:refNO})
 }

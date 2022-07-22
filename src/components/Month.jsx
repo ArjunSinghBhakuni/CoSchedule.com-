@@ -5,11 +5,11 @@ import { SimpleGrid,Container,Box} from '@chakra-ui/react'
 import CalenderHeader from './CalenderHeader'
 
 const Month = ({month}) => {
- // console.log(month)
+  //console.log(month)
   return (
-    <Box>
+    <Box m="100px" boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px;" >
     <CalenderHeader/>
-   < Box  >
+   < Box >
    {month.map((row, i) => (
      <SimpleGrid  columns={7}    key={i}>
        {row.map((day, idx) => (

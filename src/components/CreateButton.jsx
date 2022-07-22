@@ -12,12 +12,12 @@ const CreateButton = () => {
      <Menu>
   {({ isOpen }) => (
     <>
-      <MenuButton isActive={isOpen}  onClick={()=>{
+      <MenuButton fontSize={"19px"} isActive={isOpen}  onClick={()=>{
                  // console.log(day.format("MMM-DD"))
                  setDayschdule(`${dayjs().format("DD-MMMM-YYYY")}`)
               
                 }}>
-        {<AddIcon marginRight={"0.3rem"}/> } Create
+        {<AddIcon marginRight={"0.1rem"}/> }  Create
       </MenuButton>
      <CreateButtonMenuItem/>
     </>

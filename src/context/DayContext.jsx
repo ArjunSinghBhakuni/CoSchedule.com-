@@ -10,10 +10,11 @@ export const DayContextProvider = ({children})=>{
  const [daysechdule,setDayschdule] = useState("")
  
  const [newproject,setNewproject] = useState()
- console.log(newproject)
- 
+// console.log(newproject)
+const [projectRefNo,setProjectrefNo] = useState('')
+// console.log(projectRefNo)
  return ( 
-  <DayContext.Provider value={{daysechdule,setDayschdule,newproject,setNewproject}}>
+  <DayContext.Provider value={{daysechdule,setDayschdule,newproject,setNewproject,projectRefNo,setProjectrefNo}}>
    {children}
   </DayContext.Provider>
  )

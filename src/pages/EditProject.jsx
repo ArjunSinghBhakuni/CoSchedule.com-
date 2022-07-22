@@ -14,33 +14,55 @@ import {
   EditablePreview,
   EditableTextarea,
   Text,
+  Avatar,
 } from "@chakra-ui/react";
+import { GrBlog } from "react-icons/gr";
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DayContext } from "../context/DayContext";
-
+import {useSelector,useDispatch} from 'react-redux'
+import { deleteProject, editProject } from "../Redux/action";
 const EditProject = () => {
+  const {newproject,projectRefNo} = useContext(DayContext)
   const [editText, setEditText] = useState(false);
+const dispatch = useDispatch()
+  const data = useSelector((state)=>state.project)
+//console.log(data)
+
+let editData = data.find((e)=>e.refNO === projectRefNo)
+ 
   const navigate = useNavigate();
-  const {newproject} = useContext(DayContext)
 
   const handleClose = () => {
+    dispatch(editProject(projectRefNo,text))
     navigate("/");
   };
 
+  const handleDelte = ()=>{
+    dispatch(deleteProject(projectRefNo))
+    alert("Project Deleted")
+     
+    navigate("/")
+  }
+const [text,setText] = useState(editData.title)
+
   return (
-    <Box w="100%" h="50rem" border="1px solid red">
-      <Box h="5rem" border={"1px solid blue"}>
+    <Box w="95%" m="auto" boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"} h="50rem" border="1px solid lightgrey">
+      <Box h="5rem" border="1px solid lightgrey">
         <Flex justifyContent={"space-between"} p="20px">
-          <Input w="600px" value={newproject.title}/>
-          <Flex w={"300px"} justifyContent="space-around">
-            <DeleteIcon />
-            <CloseIcon onClick={handleClose} />
+          <Input fontSize={"40px"} h="50px" w="600px" value={text} onChange={(e)=>setText(e.target.value)} />
+          <Flex alignItems={"center"} w={"600px"} justifyContent="space-around">
+          <Avatar border={"1px solid lightgrey"} bg="white" size={"md"}    />
+          <Button  variant='ghost'> <GrBlog marginLeft="20px"/> Blog Post</Button>
+          <Avatar  size={"md"} src='https://bit.ly/sage-adebayo' />
+          <Button  variant='ghost'>More Option</Button>
+            <DeleteIcon cursor={"pointer"}  onClick = {handleDelte} />
+            <CloseIcon cursor={"pointer"} onClick={handleClose} />
           </Flex>
         </Flex>
       </Box>
       <Flex>
-        <Box w="65%" h="45rem" border={"1px solid blue"}>
+        <Box w="65%" h="45rem" >
           {editText ? (
             <Editable
               p="20px"
@@ -99,8 +121,8 @@ const EditProject = () => {
             </Popover>
           </Box>
         </Box>
-        <Box h="45rem" w="35%" border={"1px solid blue"}>
-          asdfd
+        <Box h="45rem" w="35%" border="1px solid lightgrey">
+        Tasks
         </Box>
       </Flex>
     </Box>

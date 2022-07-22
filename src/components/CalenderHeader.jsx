@@ -1,5 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon,Search2Icon,SunIcon,AddIcon } from '@chakra-ui/icons';
-import { Box, Button, Flex, Heading,Center } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading,Center,Text } from '@chakra-ui/react'
 import dayjs from 'dayjs';
 import React, { useContext, useState } from 'react'
 import GlobalContext from '../context/GlobalContext';
@@ -8,6 +8,7 @@ import CreateButton from './CreateButton';
 
 const CalenderHeader = () => {
  const { monthIndex, setMonthIndex } = useContext(GlobalContext); //global context
+ //console.log(monthIndex)
   function handlePrevMonth() {
     setMonthIndex(monthIndex - 1);
   }
@@ -23,32 +24,38 @@ const CalenderHeader = () => {
   }
 
   return (
-    <Box >
+    <Box 
+   
+    >
       
-      <Flex border={"1px solid red"} justifyContent="space-between">
+      <Flex  bgColor="#f7f7f7" padding={"15px 5px"} justifyContent="space-between">
 
-        <Box display={"flex"} marginLeft="40%"  justifyContent={"space-evenly"}  w="400px">
+        <Box
+        
+        
+        display={"flex"} marginLeft="40%"  justifyContent={"space-evenly"}  w="400px">
 
 
       
-      <Button onClick={handlePrevMonth}>
-        <span className="material-icons-outlined cursor-pointer text-gray-600 mx-2">
+      <Button colorScheme={"gray"} variant='ghost'    onClick={handlePrevMonth}>
+        
         <ChevronLeftIcon/>
-        </span>
+        
       </Button>
-      <Heading className="ml-4 text-xl text-gray-500 font-bold">
+      <Text fontSize='2xl'color="
+#727272"  >
         {dayjs(new Date(dayjs().year(), monthIndex)).format(
           " MMMM YYYY"
         )}
-      </Heading>
-      <Button onClick={handleNextMonth}>
-        <span className="material-icons-outlined cursor-pointer text-gray-600 mx-2">
+      </Text>
+      <Button  colorScheme={"gray"} variant='ghost'   onClick={handleNextMonth}>
+      
         <ChevronRightIcon/>
-        </span>
+       
       </Button>
       <Button
         onClick={handleReset}
-   
+        colorScheme={"gray"} variant='ghost'   
       >
         Today
       </Button>
@@ -61,12 +68,12 @@ const CalenderHeader = () => {
       <Search2Icon  w={5} h={5} />
 </Center>
   
-  <Button  >
+  <Button  bg="#d17760" variant='none' color={"white"}>
  
       <CreateButton/>
  
-    </Button>
-<Button>{<SunIcon marginRight={"0.3rem"}/>}{" "} Ideas </Button>
+    </Button >
+<Button colorScheme={"black"} variant='outline'>{<SunIcon marginRight={"0.3rem"}/>}{" "} Ideas </Button>
      
         </Box>
         </Flex>
