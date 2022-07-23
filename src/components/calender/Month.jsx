@@ -7,7 +7,7 @@ import CalenderHeader from './CalenderHeader'
 const Month = ({month}) => {
   //console.log(month)
   return (
-    <Box m="100px" boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px;" >
+    <Box  boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px;" >
     <CalenderHeader/>
    < Box >
    {month.map((row, i) => (

@@ -40,7 +40,7 @@ const Day = ({ day, rowIdx }) => {
       p="10px"
       border={"1px solid lightgrey"}
       w="167"
-      h="200px"
+      minH="200px"
       textAlign="start"
       bgColor={`${getCurrentDayClass()}`}
     >
