@@ -189,7 +189,7 @@ const { isOpen, onOpen, onClose } = useDisclosure();
   return <Box display="block"  overflow="clip">
              <Flex alignItems='center'>
                 <Box><Button variant='ghost' size='md' width="50px" onClick={onOpen}><HamburgerIcon w={6} h={6} color='gray.500'/></Button></Box>
-                        <Drawer placement={"left"} onClose={onClose} isOpen={isOpen}  w='100px'>
+                        {/* <Drawer placement={"left"} onClose={onClose} isOpen={isOpen}  w='100px'>
                             <DrawerOverlay />
                             <DrawerContent >
                             <DrawerHeader h='40px' alignContent='left' display={'flex'}  borderBottomWidth='1px'>
@@ -200,7 +200,7 @@ const { isOpen, onOpen, onClose } = useDisclosure();
                             <DrawerBody>
                             </DrawerBody>
                             </DrawerContent>
-                        </Drawer>
+                        </Drawer> */}
                 <Box marginLeft="15px">
                 <Popover placement='top-start' >
                     <PopoverTrigger >
@@ -228,13 +228,13 @@ const { isOpen, onOpen, onClose } = useDisclosure();
                        
                         </Tab>
                     <Divider/>
-                    <Tab  _selected={{ color: 'white',  bg: 'red.600' }} borderRadius={"0px 5px 5px 0px"} w="50px" h='35px'><IoIosShuffle/></Tab>
+                    <Tab isDisabled _selected={{ color: 'white',  bg: 'red.600' }} borderRadius={"0px 5px 5px 0px"} w="50px" h='35px'><IoIosShuffle/></Tab>
                     <Tab  _selected={{ color: 'white',  bg: 'red.600' }} borderRadius={"0px 5px 5px 0px"} w="50px" h='35px'><SiSimpleanalytics fontSize={'13px'}/></Tab>
-                    <Tab  _selected={{ color: 'white',  bg: 'red.600' }}  borderRadius={"0px 5px 5px 0px"} w="50px" h='35px'><BsFillBookmarkStarFill/></Tab>
+                    <Tab isDisabled _selected={{ color: 'white',  bg: 'red.600' }}  borderRadius={"0px 5px 5px 0px"} w="50px" h='35px'><BsFillBookmarkStarFill/></Tab>
                     </Flex>
                     <Flex direction={"column"} gap="15px" marginTop={"20px"}>
-                    <Tab _selected={{ color: 'white', bg: 'red.600' }}  borderRadius={"0px 5px 5px 0px"} w="50px" h='35px'><AiOutlineSetting/></Tab>
-                    <Tab _selected={{ color: 'white',  bg: 'red.600' }} borderRadius={"0px 5px 5px 0px"} w="50px" h='35px'><BsQuestionCircle/></Tab>
+                    <Tab isDisabled _selected={{ color: 'white', bg: 'red.600' }}  borderRadius={"0px 5px 5px 0px"} w="50px" h='35px'><AiOutlineSetting/></Tab>
+                    <Tab isDisabled _selected={{ color: 'white',  bg: 'red.600' }} borderRadius={"0px 5px 5px 0px"} w="50px" h='35px'><BsQuestionCircle/></Tab>
                     </Flex>
                     </Box>
                 </TabList>
