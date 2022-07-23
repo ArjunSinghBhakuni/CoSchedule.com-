@@ -1,8 +1,8 @@
 import React from 'react'
-import Calender from '../components/Calender'
-import CreateNewProject from"../components/CreateNewProject"
+import Calender from '../components/calender/Calender'
+import CreateNewProject from"../components/calender/CreateNewProject"
 import {Routes,Route} from "react-router-dom"
-import EditProject from './EditProject'
+import EditProject from '../components/calender/EditProject'
 const MainRoute = () => {
   return (
  <Routes>

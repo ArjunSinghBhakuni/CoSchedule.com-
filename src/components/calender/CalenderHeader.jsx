@@ -2,7 +2,7 @@ import { ChevronLeftIcon, ChevronRightIcon,Search2Icon,SunIcon,AddIcon } from '@
 import { Box, Button, Flex, Heading,Center,Text } from '@chakra-ui/react'
 import dayjs from 'dayjs';
 import React, { useContext, useState } from 'react'
-import GlobalContext from '../context/GlobalContext';
+import GlobalContext from "../../context/GlobalContext"
 import {Link} from 'react-router-dom'
 import CreateButton from './CreateButton';
 

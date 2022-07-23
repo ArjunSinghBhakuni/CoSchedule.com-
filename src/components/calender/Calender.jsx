@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
-import GlobalContext from "../context/GlobalContext";
-import {getMonth} from '../utils/utils'
+  import GlobalContext from "../../context/GlobalContext"
+import {getMonth} from '../../utils/utils'
 import Month from './Month'
  
+
 
 
 const Calender = () => {

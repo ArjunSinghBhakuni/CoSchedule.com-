@@ -1,6 +1,6 @@
 import React,{useContext} from 'react'
 import {Box,Text,Avatar} from "@chakra-ui/react"
-import { DayContext } from '../context/DayContext';
+import { DayContext } from '../../context/DayContext'
 import { useNavigate} from "react-router-dom"
 import "./day.css";
 

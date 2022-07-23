@@ -19,9 +19,9 @@ import {
 import { GrBlog } from "react-icons/gr";
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { DayContext } from "../context/DayContext";
+import { DayContext } from "../../context/DayContext";
 import {useSelector,useDispatch} from 'react-redux'
-import { deleteProject, editProject } from "../Redux/action";
+import { deleteProject, editProject } from "../../Redux/action";
 const EditProject = () => {
   const {newproject,projectRefNo} = useContext(DayContext)
   const [editText, setEditText] = useState(false);

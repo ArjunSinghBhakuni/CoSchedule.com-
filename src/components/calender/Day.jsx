@@ -14,7 +14,7 @@ import { AddIcon } from "@chakra-ui/icons";
 import "./day.css";
 import CreateButton from "./CreateButton";
 import CreateButtonMenuItem from "./CreateButtonMenuItem";
-import { DayContext } from "../context/DayContext";
+import { DayContext } from '../../context/DayContext'
 import { useSelector } from "react-redux";
 import DayProjects from "./DayProjects";
 

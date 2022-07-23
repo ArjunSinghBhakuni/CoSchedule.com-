@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import Calender from './components/Calender';
-import MainRoute from './pages/MainRoute';
+ 
+import MainRoute from './Routes/MainRoute';
 
 function App() {
   return (

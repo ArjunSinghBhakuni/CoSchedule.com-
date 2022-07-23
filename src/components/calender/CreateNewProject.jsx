@@ -16,8 +16,8 @@ import React, { useContext, useState, useRef } from "react";
 import dayjs from "dayjs";
 import { CloseIcon } from "@chakra-ui/icons";
 import { Link, useNavigate } from "react-router-dom";
-import { DayContext } from "../context/DayContext";
-import { addNewProject } from "../Redux/action";
+import { DayContext } from '../../context/DayContext'
+import { deleteProject, editProject,addNewProject } from "../../Redux/action";
 import { v4 as uuid } from "uuid";
 import { useSelector ,useDispatch} from 'react-redux'
 const CreateNewProject = () => {
