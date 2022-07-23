@@ -6,6 +6,8 @@ import {
   FormHelperText,
   Button,
   Flex,
+  Stack,
+  Text,
   useMediaQuery,
   useToast,
   Spinner,
@@ -14,7 +16,7 @@ import React from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { isLogin } from "../../Redux/logger/action";
-import { useNavigate } from "react-router-dom";
+import {Link as RouterLink, useNavigate } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 export const Login = () => {
@@ -99,8 +101,8 @@ export const Login = () => {
           direction="column"
           textAlign="center"
         >
-          <Heading mt="10" as="h2" size="lg">
-            LogIn
+          <Heading mt="10" as="h2" size="lg" color="lightpink">
+            CoSchedule
           </Heading>
           <FormControl
             w={isLargerThan992 ? "30%" : "70%"}
@@ -148,7 +150,7 @@ export const Login = () => {
                   "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
               }}
               transform="scale(0.98)"
-              background="#000000"
+              background="#f37e5d"
               width="200px"
               _hover={{
                 bg: "#f5f6f7",
@@ -158,36 +160,17 @@ export const Login = () => {
               onClick={(e) => {
                 handleSubmit(e);
               }}
-              
             >
               Login
             </Button>
-
-            {/* <div>or</div>
-            <Button
-              mt="20px"
-              w="100%"
-              borderColor="#ccd0d5"
-              colorScheme="RGBA(0, 0, 0, 0.92)"
-              _focus={{
-                boxShadow:
-                  "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
-              }}
-              transform="scale(0.98)"
-              background="#000000"
-              width="200px"
-              _hover={{
-                bg: "#f5f6f7",
-                background: "RGBA(0, 0, 0, 0.80)",
-                transform: "scale(0.98)",
-              }}
-              //  onClick={
-              // window.location.href = "./register"
-
-              //  }
-            >
-              Signup
-            </Button> */}
+            <Stack pt={6}>
+              <Text align={"center"}>
+                Don't have account?{" "}
+                <RouterLink to="/register" color={"red.400"}>
+                  Signup
+                </RouterLink>
+              </Text>
+            </Stack>
           </FormControl>
         </Flex>
       )}
