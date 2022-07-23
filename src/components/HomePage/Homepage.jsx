@@ -24,7 +24,7 @@ import { Flex
         DrawerCloseButton,
     } from '@chakra-ui/react'
 
-import {useNavigate} from "react-router-dom"
+import {useNavigate,Link} from "react-router-dom"
 import { BiHomeAlt} from 'react-icons/bi';
 import {IoIosShuffle} from 'react-icons/io';
 import {SiSimpleanalytics} from 'react-icons/si';
@@ -222,11 +222,13 @@ const { isOpen, onOpen, onClose } = useDisclosure();
                     <Flex direction={"column"} gap="8px" marginTop={"20px"}>
                     <Tab  _selected={{ color: 'white', bg: 'red.600' }} borderRadius={"0px 5px 5px 0px"} w="50px" h='35px'><BiHomeAlt/></Tab>
                     <Divider/>
+                   <Link to='/calender'>
                     <Tab  _selected={{color: 'white',  bg: 'red.600'}}  borderRadius={"0px 5px 5px 0px"} w="50px" h='35px'>
                          
                         <AiTwotoneCalendar/>
                        
                         </Tab>
+                   </Link>
                     <Divider/>
                     <Tab isDisabled _selected={{ color: 'white',  bg: 'red.600' }} borderRadius={"0px 5px 5px 0px"} w="50px" h='35px'><IoIosShuffle/></Tab>
                     <Tab  _selected={{ color: 'white',  bg: 'red.600' }} borderRadius={"0px 5px 5px 0px"} w="50px" h='35px'><SiSimpleanalytics fontSize={'13px'}/></Tab>
@@ -337,7 +339,7 @@ const { isOpen, onOpen, onClose } = useDisclosure();
                     </TabPanel>
                        
                     <TabPanel> 
-                      <Calender/>
+                      {/* <Calender/> */}
                     </TabPanel>
                      
                     <TabPanel></TabPanel>
