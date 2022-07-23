@@ -30,10 +30,14 @@ const CalenderHeader = () => {
       
       <Flex  bgColor="#f7f7f7" padding={"15px 5px"} justifyContent="space-between">
 
+        <Link to='/home'>
+        <Button>Home</Button>
+        </Link>
+
         <Box
         
         
-        display={"flex"} marginLeft="40%"  justifyContent={"space-evenly"}  w="400px">
+        display={"flex"} marginLeft="5%"  justifyContent={"space-evenly"}  w="400px">
 
 
       
