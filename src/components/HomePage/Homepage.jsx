@@ -242,7 +242,7 @@ const { isOpen, onOpen, onClose } = useDisclosure();
                                     <Text fontFamily='sans-serif' fontSize='15px'>Successful marketers complete these milestones within their first week.</Text>
                                 </Flex>
                                 <Flex >
-                                    <Grid  w='85%' height='auto' paddingTop='10px' templateColumns='repeat(2, 1fr)' overflowY='scroll' templateRows='auto' gap='6' className='getting_started'>
+                                <Grid  w='85%' height='auto' paddingTop='10px' templateColumns='repeat(2, 1fr)' overflowY='scroll' templateRows='auto' gap='6' className='getting_started'>
                                         <Flex borderRadius='5px' w='100%' padding='10px'minH='100px' maxH='auto' border='1px solid gray' gap='10px' className='getting-grid'>
                                             <Box><input className='checkbox-round' type='checkbox' onChange={(value)=>handleCheck(value)}/></Box>
                                             <Box textAlign='left'>
