@@ -42,12 +42,12 @@ let editData = data.find((e)=>e.refNO === projectRefNo)
     dispatch(deleteProject(projectRefNo))
     alert("Project Deleted")
      
-    navigate("/")
+    navigate("/calender")
   }
 const [text,setText] = useState(editData.title)
 
   return (
-    <Box w="95%" m="auto" boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"} h="50rem" border="1px solid lightgrey">
+    <Box w="90%" m="auto" marginTop={"50px"} boxShadow={"rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"} h="45rem" border="1px solid lightgrey">
       <Box h="5rem" border="1px solid lightgrey">
         <Flex justifyContent={"space-between"} p="20px">
           <Input fontSize={"40px"} h="50px" w="600px" value={text} onChange={(e)=>setText(e.target.value)} />
@@ -62,7 +62,7 @@ const [text,setText] = useState(editData.title)
         </Flex>
       </Box>
       <Flex>
-        <Box w="65%" h="45rem" >
+        <Box w="65%" h="40rem" >
           {editText ? (
             <Editable
               p="20px"
@@ -121,7 +121,7 @@ const [text,setText] = useState(editData.title)
             </Popover>
           </Box>
         </Box>
-        <Box h="45rem" w="35%" border="1px solid lightgrey">
+        <Box h="40rem" w="35%" border="1px solid lightgrey">
         Tasks
         </Box>
       </Flex>

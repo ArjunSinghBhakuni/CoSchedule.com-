@@ -9,6 +9,7 @@ import {
   Flex,
   HStack,
    Avatar,
+   Alert,
 } from "@chakra-ui/react";
 import { GrBlog } from "react-icons/gr";
 import {CalendarIcon} from"@chakra-ui/icons"
@@ -33,18 +34,26 @@ const CreateNewProject = () => {
   const [text, setText] = useState("");
   
   const handleCreateButton = () => {
-    const payload = {
-      title: text,
+    if(text){
 
-      date: currentdate.current,
-
-      refNO: uuid(),
-    };
-    //   console.log(payload)
-    setProjectrefNo(payload.refNO);
-    dispatch(addNewProject(payload));
-    //  setNewproject(payload)
-    navigate("/editproject");
+      const payload = {
+        title: text,
+        
+        date: currentdate.current,
+        
+        refNO: uuid(),
+      };
+      //   console.log(payload)
+      setProjectrefNo(payload.refNO);
+      dispatch(addNewProject(payload));
+      //  setNewproject(payload)
+      navigate("/editproject");
+    }else{
+     
+     
+ alert("Please Add Project")
+   
+    }
   };
 
   return (
@@ -76,7 +85,7 @@ const CreateNewProject = () => {
         <Input
           placeholder="New Project Title"
           w="800px"
-           
+          
           h="70px" 
           p="20px 5px"
           fontSize="50px"
