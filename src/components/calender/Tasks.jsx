@@ -35,7 +35,7 @@ export default function Tasks() {
     >
       
        <Input addTodo={addTodo} />
-      <TodoList todolist={todoLIst} />
+      <TodoList todolist={todoLIst} setTodoList={setTodoList} />
     </Box>
   );
 }
