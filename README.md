@@ -1,3 +1,8 @@
+This was a collaborative project made by 4 members Executed in 5 days.
+1) Kapil Jadon
+2) Arjun Singh Bhakuni
+3) Gagan Chandan
+4) salman Khan 
 ### Deploy Link -https://remarkable-ice-6564.vercel.app/
 Note - Please Open this link on Incoginate Window 
 
