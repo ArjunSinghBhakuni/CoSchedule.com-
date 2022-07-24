@@ -75,8 +75,13 @@ const [text,setText] = useState(editData.title)
               <EditableTextarea h="300px" />
             </Editable>
           ) : null}
+
+         
           <Box marginTop="15%">
-            <Text>Attachment</Text>
+          <Text fontSize={"25px"} colorScheme="grey">Let's get to work! </Text>
+<Text fontSize={"25px"} colorScheme="grey"> Organize your project by</Text>
+<Text fontSize={"25px"} colorScheme="grey"> adding custom attachments.</Text>
+            <Text fontSize={"20px"} >Attachment</Text>
             <Popover>
               <PopoverTrigger>
                 <Button>
