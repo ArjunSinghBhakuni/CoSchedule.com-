@@ -15,6 +15,7 @@ import {
   EditableTextarea,
   Text,
   Avatar,
+  Heading,
 } from "@chakra-ui/react";
 import { GrBlog } from "react-icons/gr";
 import React, { useContext, useState } from "react";
@@ -22,6 +23,7 @@ import { useNavigate } from "react-router-dom";
 import { DayContext } from "../../context/DayContext";
 import {useSelector,useDispatch} from 'react-redux'
 import { deleteProject, editProject,addNewProject } from "../../Redux/App_reducer/action";
+import Tasks from "./Tasks";
 const EditProject = () => {
   const {newproject,projectRefNo} = useContext(DayContext)
   const [editText, setEditText] = useState(false);
@@ -121,8 +123,9 @@ const [text,setText] = useState(editData.title)
             </Popover>
           </Box>
         </Box>
-        <Box h="40rem" w="35%" border="1px solid lightgrey">
-        Tasks
+        <Box   h="40rem" w="35%" border="1px solid lightgrey">
+        <Heading>Tasks</Heading>
+        <Tasks/>
         </Box>
       </Flex>
     </Box>
