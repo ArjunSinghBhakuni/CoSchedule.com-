@@ -1,5 +1,5 @@
 This was a collaborative project made by 4 members Executed in 5 days.
-1) salman Khan 
+1) Salman Khan 
 2) Kapil Jadon 
 3) Gagan Chandan
 4) Arjun Singh
