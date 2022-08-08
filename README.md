@@ -3,7 +3,7 @@ This was a collaborative project made by 4 members Executed in 5 days.
 2) Kapil Jadon 
 3) Gagan Chandan
 4) Arjun Singh
-### Deploy Link -https://remarkable-ice-6564.vercel.app/
+### Deploy Link -https://co-schedule-com.vercel.app/ 
 Note - Please Open this link on Incoginate Window 
 
 ### Project PPT - https://drive.google.com/file/d/1Y1_bdVRVPVtc_QmrMkPzxf159H-s_uC7/view
